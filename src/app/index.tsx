@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { DashboardCard } from '@/components/dashboard/dashboard-card';
@@ -32,6 +32,14 @@ export default function HomeScreen() {
             />
           ))}
         </ScrollView>
+        <ThemedView style={styles.activitySection}>
+          <View>
+            <Text style={styles.sectionTitle}>Atividade semanal</Text>
+            <Text style={styles.sectionSubtitle}>
+              Seus treinos nos últimos 7 dias
+            </Text>
+          </View>
+        </ThemedView>
       </SafeAreaView>
     </ThemedView>
   );
@@ -75,5 +83,18 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#A1A1AA',
     textAlign: 'left',
+  },
+  activitySection: {
+    width: '100%',
+    gap: Spacing.three,
+  },
+  sectionTitle: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+  },
+  sectionSubtitle: {
+    fontSize: 14,
+    color: '#A1A1AA',
   },
 });
